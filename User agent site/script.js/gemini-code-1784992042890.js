@@ -1,5 +1,5 @@
 // ১. পাসওয়ার্ড সেটিংস (এখানে আপনার নিজের পাসওয়ার্ড সেট করুন)
-const SECRET_PASSWORD = "mycpapassword123"; 
+const SECRET_PASSWORD = "@Nhs#653&858$?"; 
 
 function checkAccess() {
     const input = document.getElementById('pass-input').value;
