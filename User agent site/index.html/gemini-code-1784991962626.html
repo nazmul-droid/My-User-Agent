@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium User Agent Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Access Password Modal -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <h2>🔒 Restricted Access</h2>
+            <p>সাইটটি ব্যবহার করতে পাসওয়ার্ড দিন:</p>
+            <input type="password" id="pass-input" placeholder="Password...">
+            <button onclick="checkAccess()">Enter</button>
+            <p id="auth-error" style="color:red; display:none;">ভুল পাসওয়ার্ড!</p>
+        </div>
+    </div>
+
+    <!-- Main Generator UI -->
+    <div id="main-app" class="container" style="display:none;">
+        <h1>🚀 Premium User Agent Generator (CPA Special)</h1>
+        
+        <div class="controls">
+            <div class="input-group">
+                <label>কতগুলো User Agent চান? (1-1000):</label>
+                <input type="number" id="count" value="10" min="1" max="5000">
+            </div>
+
+            <div class="input-group">
+                <label>Platform/OS সিলেক্ট করুন:</label>
+                <select id="platform">
+                    <option value="all">All Devices (Mix)</option>
+                    <option value="ios">iOS (iPhone/iPad)</option>
+                    <option value="android">Android</option>
+                    <option value="mac">macOS</option>
+                    <option value="windows">Windows</option>
+                    <option value="linux">Linux</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Browser Preference:</label>
+                <select id="browser">
+                    <option value="all">All Browsers (Chrome, Safari, Edge)</option>
+                    <option value="chrome">Chrome Only</option>
+                    <option value="safari">Safari Only</option>
+                </select>
+            </div>
+
+            <button class="btn-generate" onclick="generateAgents()">Generate User Agents</button>
+        </div>
+
+        <div class="output-section">
+            <div class="output-header">
+                <h3>Generated Agents:</h3>
+                <div>
+                    <button class="btn-action" onclick="copyToClipboard()">📋 Copy All</button>
+                    <button class="btn-action" onclick="downloadTxt()">📥 Download .txt</button>
+                </div>
+            </div>
+            <textarea id="result-box" readonly placeholder="এখানে আপনার User Agent গুলো চলে আসবে..."></textarea>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
